@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<h1>My Family Book</h1>
+<body>
+    <center>
+        <img id = "firstImage" src = "" height = "300px" width = "350px"/>
+        <p id = "display_names"> </p>
+      <script>
+            var index = 0;
+            var myImage = document.getElementById("firstImage").value;
+            var familyImages = ["https://image.shutterstock.com/image-vector/working-mom-260nw-158801603.jpg" , "https://image.shutterstock.com/image-vector/dad-taking-his-daughter-school-260nw-1892245756.jpg" , "https://image.shutterstock.com/image-vector/cute-thinking-woman-looking-away-260nw-439245706.jpg"];
+            var familyNames = ["Sonia Chitam" , "Dileep Chitam", "Padma Chitam"];
+
+            window.onload = function() {
+                  document.getElementById("firstImage").src= familyImages[index];
+                  document.getElementById("display_names").innerHTML = familyNames[index];
+            }
+        </script>
+
+        <button type = "button" id = "buttonNext" onclick = "next()">Next</button>
+
+    </center>
+    
+    <script>
+      
+        function next() {
+            index = index + 1;
+            if (index == familyImages.length){
+                  index =0;
+            }
+            document.getElementById("firstImage").src= familyImages[index];
+            document.getElementById("display_names").innerHTML = familyNames[index];
+           
+        }
+    </script>
+</body>
+</html>
